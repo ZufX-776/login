@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kirish — Ro'yxatdan o'tish</title>
+  <link rel="stylesheet" href="./auth.css">
+</head>
+<body>
+  <main class="auth" id="auth">
+    <div class="auth__card">
+      <h1 class="auth__title" id="title">Hisobingizga kiring</h1>
+      <p class="auth__sub" id="subtitle">Telefon raqamingiz va parolni kiriting.</p>
+
+      <div class="tabs" role="tablist">
+        <button class="tabs__btn is-active" role="tab" data-tab="login" aria-selected="true">Kirish</button>
+        <button class="tabs__btn" role="tab" data-tab="signup" aria-selected="false">Ro'yxatdan o'tish</button>
+      </div>
+
+      <div class="alert" id="alert" role="alert" hidden></div>
+
+      <form id="loginForm" class="form" novalidate>
+        <label class="field">
+          <span>Telefon raqam</span>
+          <input name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+998 90 123 45 67" required>
+          <small class="field__err"></small>
+        </label>
+        <label class="field">
+          <span>Parol</span>
+          <div class="pw">
+            <input name="password" type="password" autocomplete="current-password" required>
+            <button type="button" class="pw__toggle" aria-label="Parolni ko'rsatish">Ko'rsatish</button>
+          </div>
+          <small class="field__err"></small>
+        </label>
+        <button class="btn" type="submit">Kirish</button>
+      </form>
+
+      <form id="signupForm" class="form" novalidate hidden>
+        <label class="field">
+          <span>Ism va familiya</span>
+          <input name="name" type="text" autocomplete="name" required>
+          <small class="field__err"></small>
+        </label>
+        <label class="field">
+          <span>Telefon raqam</span>
+          <input name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+998 90 123 45 67" required>
+          <small class="field__err"></small>
+        </label>
+        <label class="field">
+          <span>Parol</span>
+          <div class="pw">
+            <input name="password" type="password" autocomplete="new-password" required>
+            <button type="button" class="pw__toggle" aria-label="Parolni ko'rsatish">Ko'rsatish</button>
+          </div>
+          <div class="meter" aria-hidden="true"><i></i></div>
+          <small class="meter__txt">Kamida 8 ta belgi, harf va raqam.</small>
+          <small class="field__err"></small>
+        </label>
+        <label class="field">
+          <span>Parolni tasdiqlang</span>
+          <input name="confirm" type="password" autocomplete="new-password" required>
+          <small class="field__err"></small>
+        </label>
+        <button class="btn" type="submit">Hisob yaratish</button>
+      </form>
+    </div>
+  </main>
+
+  <script src="./auth.js"></script>
+  <script src="./ui.js"></script>
+</body>
+</html>
